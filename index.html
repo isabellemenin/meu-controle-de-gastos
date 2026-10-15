@@ -7,7 +7,6 @@
 
     <title>Meu Controle de Gastos</title>
 
-    <!-- Importa o CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,9 +22,32 @@
             <h2 id="saldo">R$ 500,00</h2>
         </section>
 
-        <!-- Formulário do gasto -->
-        <section class="formulario">
+        <!-- Formulário para adicionar dinheiro -->
+        <h3>Adicionar dinheiro</h3>
 
+        <section class="formulario">
+            <input
+                type="text"
+                id="descricaoEntrada"
+                placeholder="Descrição da entrada">
+
+            <input
+                type="number"
+                id="valorEntrada"
+                placeholder="Valor (R$)"
+                min="0.01"
+                step="0.01"
+                inputmode="decimal">
+
+            <button class="botao-entrada" onclick="adicionarDinheiro()">
+                Adicionar dinheiro
+            </button>
+        </section>
+
+        <!-- Formulário para adicionar gastos -->
+        <h3>Adicionar gasto</h3>
+
+        <section class="formulario">
             <input
                 type="text"
                 id="descricao"
@@ -34,20 +56,19 @@
             <input
                 type="number"
                 id="valor"
-                placeholder="Valor"
-                min="0"
+                placeholder="Valor (R$)"
+                min="0.01"
                 step="0.01"
                 inputmode="decimal">
 
             <button onclick="adicionarGasto()">
                 Adicionar gasto
             </button>
-
         </section>
 
-        <h3>Meus gastos</h3>
+        <!-- Histórico de movimentações -->
+        <h3>Histórico de movimentações</h3>
 
-        <!-- Lista de gastos -->
         <div id="listaGastos"></div>
 
         <!-- Total dos gastos -->
@@ -58,7 +79,6 @@
 
     </main>
 
-    <!-- Importa o JavaScript -->
     <script src="script.js"></script>
 
 </body>
